@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- loads all static files required for the webpage -->
+ {% load staticfiles %}
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Sessions Summary</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'lib/startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/css/bootstrap.min.css' %}"/>
+
+    <!-- MetisMenu CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'lib/startbootstrap-sb-admin-2-gh-pages/vendor/metisMenu/metisMenu.min.css' %}"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'lib/startbootstrap-sb-admin-2-gh-pages/dist/css/sb-admin-2.css' %}"/>
+
+    <!-- Morris Charts CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'lib/startbootstrap-sb-admin-2-gh-pages/vendor/morrisjs/morris.css' %}"/>
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" type="text/css" href="{% static 'lib/startbootstrap-sb-admin-2-gh-pages/vendor/font-awesome/css/font-awesome.min.css' %}"/>
+
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
+
+
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+<style>
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke: black;
+            shape-rendering: crispEdges;
+        }
+
+        .axis text {
+            font-family: sans-serif;
+            font-size: 11px;
+        }
+
+        .dot {
+          stroke: #000;
+        }
+
+
+        .legend {
+                        padding: 5px;
+                        font: 10px sans-serif;
+                        background: yellow;
+                        box-shadow: 2px 2px 1px #888;
+                    }
+</style>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../avalyticsapp"><b>AVALYTICS</b></a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+             
+                
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                       <!--  <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                            </div>
+                          
+                        </li> -->
+                        <li>
+                            <a href="../avalyticsapp"><i class="fa fa-dashboard fa-fw"></i> All Sessions Summary</a>
+                        </li>
+                        <li>
+                            <a href="../avalyticsapp/singleusersession"><i class="fa fa-dashboard fa-fw"></i> Single User Sessions</a>
+                        </li>
+                        <li>
+                            <a href="../avalyticsapp/pages"><i class="fa fa-dashboard fa-fw"></i> Pages Overview</a>
+                        </li>
+   
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">ALL SESSIONS SUMMARY</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+
+            <div class="row" id="SessionsSelect">
+
+               
+                <!-- /.col-lg-12 -->
+            </div>
+
+            <!-- <div class="row"> -->
+              <div class="col-lg-12">
+                <div class="panel panel-success">
+                    <div class = "row">
+                            <div class="btn-group pull-left">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                         Date Selection <span class="caret"></span>
+                                </button>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <!-- <li><a class="m" value="2014-02-19" href="#">2014-02-19</a></li>
+                                    <li><a class="m" value="2014-02-20" href="#">2014-02-20</a></li>
+                                    <li><a class="m" value="2014-02-21" href="#">2014-02-21</a></li>
+                                    <li><a class="m" value="2014-02-22" href="#">2014-02-22</a></li>
+                                    <li><a class="m" value="2014-02-23" href="#">2014-02-23</a></li> -->
+
+                                    <li><a class="m" value="01-07-2018">01-07-2018</a></li>
+                                    <li><a class="m" value="02-07-2018">02-07-2018</a></li>
+                                    <li><a class="m" value="03-07-2018">03-07-2018</a></li>
+                                    <li><a class="m" value="04-07-2018">04-07-2018</a></li>
+                                </ul>
+                                
+                            </div>
+                    </div>
+                    <div class = "row">
+                            
+                    </div>
+                </div>
+              </div>
+            <!-- </div> -->
+
+
+            <!-- /.row -->
+            <div class="row">
+
+                    <!-- <div class="row"> -->
+
+                            <div class="col-lg-3 col-md-6">
+                                 <div class="panel panel-success">
+                                            <div class="panel-heading">
+                                                <div class="row">
+                                                    <div class="col-xs-3">
+                                                        <i class="fa fa-clock-o fa-5x"></i>
+                                                    </div>
+                                                    <div class="col-xs-9 text-right">
+                                                        <div class="huge" id="date_time"></div>
+                                                        <div>Date</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                            
+                                </div>
+                            </div>
+                    <!-- </div> -->
+
+                    
+                    <!-- <div class="row"> -->
+                            <div class="col-lg-3 col-md-6">
+                                        <div class="panel panel-warning">
+                                            <div class="panel-heading">
+                                                <div class="row">
+                                                    <div class="col-xs-3">
+                                                        <i class="fa fa-clock-o fa-5x"></i>
+                                                    </div>
+                                                    <div class="col-xs-9 text-right">
+                                                        <div class="huge" id="num_users"></div>
+                                                        <div>Number of Users</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                            </div>
+
+
+                    <!-- </div> -->
+
+                                <div class="col-lg-3 col-md-6">
+                                        <div class="panel panel-yellow">
+                                            <div class="panel-heading">
+                                                <div class="row">
+                                                    <div class="col-xs-3">
+                                                        <i class="fa fa-clock-o fa-5x"></i>
+                                                    </div>
+                                                    <div class="col-xs-9 text-right">
+                                                        <div class="huge" id="duration"></div>
+                                                        <div>Total Usage Time</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                </div>
+
+
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="panel panel-danger">
+                                        <div class="panel-heading">
+                                            <div class="row">
+                                                <div class="col-xs-3">
+                                                    <i class="fa fa-mouse-pointer fa-5x"></i>
+                                                </div>
+                                                <div class="col-xs-9 text-right">
+                                                    <div class="huge" id="clicks"></div>
+                                                    <div>Number of Clicks</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+
+
+            
+            </div>
+            <!-- /.row -->
+
+            <div id="mbars">
+            </div>
+
+            <div id="mbarsduration">
+            </div>
+
+            <div id="mbarsusers">
+            </div>
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="{% static 'lib/startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.min.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script type="text/javascript" src="{% static 'lib/startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script type="text/javascript" src="{% static 'lib/startbootstrap-sb-admin-2-gh-pages/vendor/metisMenu/metisMenu.min.js' %}"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script type="text/javascript" src="{% static 'lib/startbootstrap-sb-admin-2-gh-pages/vendor/raphael/raphael.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'lib/startbootstrap-sb-admin-2-gh-pages/vendor/morrisjs/morris.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'lib/startbootstrap-sb-admin-2-gh-pages/data/morris-data.js' %}"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script type="text/javascript" src="{% static 'lib/startbootstrap-sb-admin-2-gh-pages/dist/js/sb-admin-2.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'local/sitavisuals.js' %}"></script>
+    <script type="text/javascript" src="{% static 'local/sumperday.json' %}"></script>
+
+
+    <script type="text/javascript" src="{% static 'local/onejuly_df.json' %}"></script>
+    <script type="text/javascript" src="{% static 'local/twojuly_df.json' %}"></script>
+    <script type="text/javascript" src="{% static 'local/threejuly_df.json' %}"></script>
+    <script type="text/javascript" src="{% static 'local/fourjul_df.json' %}"></script>
+
+<!--     <script type="text/javascript" src="{% static 'local/19.json' %}"></script>
+    <script type="text/javascript" src="{% static 'local/20.json' %}"></script>
+    <script type="text/javascript" src="{% static 'local/21.json' %}"></script>
+    <script type="text/javascript" src="{% static 'local/22.json' %}"></script>
+    <script type="text/javascript" src="{% static 'local/23.json' %}"></script> -->
+
+    <!-- for the bar chart -->
+    <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+    <!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script> -->
+        
+   
+
+
+    <script type="text/javascript">
+             // users = [["User 1"], ["User 2"], ["User 3"], ["User 4"]];
+             // drawTable2(users,"myPieChart");
+
+             var four_july = {{fourjuly|safe}};
+             var one_july = {{onejuly|safe}};
+             var two_july = {{twojuly|safe}};
+             var three_july = {{threejuly|safe}};
+
+             var summary_stats = {{summary_stats|safe}};
+             // num_users = sess_data.length - 1;
+
+            // document.getElementById("SessionsSelect").innerHTML = '<input type="date" name="thedate" min="2018-07-01" max="2018-07-04" id="the_date">' + '<input type="submit" id="sub_b"><br>';
+
+            user_value = 0;
+
+            // document.getElementById("sub_b").onclick = function () {
+            //                                                                    date_value = document.getElementById("the_date").value;
+
+            //                                                                    all_date_data =[];
+            //                                                                    sum_stats = [];
+
+            //                                                                    if(date_value == "2018-07-01")
+            //                                                                    {
+            //                                                                             all_date_data = one_july;
+            //                                                                             sum_stats = summary_stats[4];
+                                                                                        
+            //                                                                    }
+
+            //                                                                    else if(date_value == "2018-07-02")
+            //                                                                    {
+            //                                                                             all_date_data = two_july;
+            //                                                                             sum_stats = summary_stats[3];
+            //                                                                    }
+
+            //                                                                    else if(date_value == "2018-07-03")
+            //                                                                    {
+            //                                                                             all_date_data = three_july;
+            //                                                                             sum_stats = summary_stats[2];
+            //                                                                    }
+
+            //                                                                    else if(date_value == "2018-07-04")
+            //                                                                    {
+            //                                                                             all_date_data = four_july;
+            //                                                                             sum_stats = summary_stats[1];
+            //                                                                    }
+
+            //                                                                    firstRowPanelsSessionSummary(sum_stats);
+            //                                                                     // timelineData(sess_data,user_value_num);   
+            //                                                                 };
+
+                                                                        
+                                                                            
+                                                                            plotBarChart("#mbars","Clicks");
+                                                                            // plotBarChartDuration("#mbarsduration","Duration");
+                                                                            // plotBarChartUsers("#mbarsusers","Users");
+
+
+    </script>
+
+
+</body>
+
+</html>

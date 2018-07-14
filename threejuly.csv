@@ -1,0 +1,46 @@
+,User ID,Start Date,Start Time,End Date,End Time,Click Path,First Page,Last Page,Duration,Clicks
+8,9,03/07/2018,23:41:00,03/07/2018,23:42:00,"['Directional Assistance', 'Service Selection', 'Boarding Pass', 'Travel Type Selection', 'Language Selection', 'Travel Type Selection', 'Airline Selection']",Directional Assistance,Airline Selection,00:01:00,13
+9,10,03/07/2018,23:13:00,03/07/2018,23:18:00,"['Information Entry', 'Airline Selection', 'Service Selection']",Information Entry,Service Selection,00:05:00,76
+10,11,03/07/2018,22:29:00,03/07/2018,22:36:00,"['Boarding Pass', 'Directional Assistance', 'Language Selection']",Boarding Pass,Language Selection,00:07:00,43
+11,12,03/07/2018,21:38:00,03/07/2018,21:40:00,"['Boarding Pass', 'Language Selection', 'Baggage Information and Restrictions', 'Travel Type Selection', 'Travel Type Selection']",Boarding Pass,Travel Type Selection,00:02:00,45
+12,13,03/07/2018,21:24:00,03/07/2018,21:31:00,"['Baggage Information and Restrictions', 'Service Selection', 'Service Selection', 'Airline Selection', 'Boarding Pass', 'Information Entry']",Baggage Information and Restrictions,Information Entry,00:07:00,44
+13,14,03/07/2018,20:53:00,03/07/2018,20:58:00,['Language Selection'],Language Selection,Language Selection,00:05:00,17
+14,15,03/07/2018,19:54:00,03/07/2018,19:56:00,"['Service Selection', 'Travel Type Selection', 'Boarding Pass']",Service Selection,Boarding Pass,00:02:00,42
+15,16,03/07/2018,19:09:00,03/07/2018,19:16:00,"['Directional Assistance', 'Directional Assistance', 'Boarding Pass']",Directional Assistance,Boarding Pass,00:07:00,37
+16,17,03/07/2018,18:54:00,03/07/2018,18:59:00,"['Travel Type Selection', 'Information Entry', 'Airline Selection', 'Language Selection', 'Boarding Pass']",Travel Type Selection,Boarding Pass,00:05:00,62
+17,18,03/07/2018,18:51:00,03/07/2018,18:55:00,['Information Entry'],Information Entry,Information Entry,00:04:00,19
+18,19,03/07/2018,18:00:00,03/07/2018,18:09:00,"['Travel Type Selection', 'Information Entry', 'Travel Type Selection', 'Boarding Pass', 'Directional Assistance', 'Airline Selection']",Travel Type Selection,Airline Selection,00:09:00,4
+19,20,03/07/2018,18:00:00,03/07/2018,18:02:00,"['Language Selection', 'Travel Type Selection', 'Airline Selection', 'Language Selection', 'Language Selection', 'Travel Type Selection', 'Airline Selection']",Language Selection,Airline Selection,00:02:00,27
+20,21,03/07/2018,17:58:00,03/07/2018,18:04:00,"['Airline Selection', 'Service Selection', 'Directional Assistance', 'Language Selection', 'Airline Selection', 'Language Selection', 'Travel Type Selection']",Airline Selection,Travel Type Selection,00:06:00,63
+21,22,03/07/2018,17:30:00,03/07/2018,17:34:00,['Directional Assistance'],Directional Assistance,Directional Assistance,00:04:00,50
+22,23,03/07/2018,16:34:00,03/07/2018,16:44:00,"['Language Selection', 'Travel Type Selection', 'Airline Selection', 'Travel Type Selection', 'Airline Selection', 'Boarding Pass']",Language Selection,Boarding Pass,00:10:00,19
+23,24,03/07/2018,15:45:00,03/07/2018,15:47:00,['Service Selection'],Service Selection,Service Selection,00:02:00,31
+24,25,03/07/2018,14:46:00,03/07/2018,14:56:00,"['Language Selection', 'Travel Type Selection', 'Directional Assistance', 'Language Selection', 'Baggage Information and Restrictions']",Language Selection,Baggage Information and Restrictions,00:10:00,59
+25,26,03/07/2018,14:20:00,03/07/2018,14:21:00,"['Information Entry', 'Baggage Information and Restrictions', 'Information Entry', 'Information Entry', 'Boarding Pass', 'Travel Type Selection', 'Language Selection', 'Airline Selection']",Information Entry,Airline Selection,00:01:00,44
+26,27,03/07/2018,13:51:00,03/07/2018,13:58:00,"['Directional Assistance', 'Airline Selection']",Directional Assistance,Airline Selection,00:07:00,54
+27,28,03/07/2018,13:11:00,03/07/2018,13:17:00,"['Airline Selection', 'Travel Type Selection', 'Baggage Information and Restrictions']",Airline Selection,Baggage Information and Restrictions,00:06:00,38
+28,29,03/07/2018,12:36:00,03/07/2018,12:46:00,"['Baggage Information and Restrictions', 'Airline Selection', 'Boarding Pass', 'Directional Assistance']",Baggage Information and Restrictions,Directional Assistance,00:10:00,37
+29,30,03/07/2018,11:46:00,03/07/2018,11:53:00,"['Language Selection', 'Directional Assistance']",Language Selection,Directional Assistance,00:07:00,64
+30,31,03/07/2018,11:07:00,03/07/2018,11:11:00,['Information Entry'],Information Entry,Information Entry,00:04:00,6
+31,32,03/07/2018,10:09:00,03/07/2018,10:11:00,"['Boarding Pass', 'Information Entry', 'Travel Type Selection', 'Baggage Information and Restrictions']",Boarding Pass,Baggage Information and Restrictions,00:02:00,7
+32,33,03/07/2018,09:44:00,03/07/2018,09:51:00,"['Language Selection', 'Service Selection', 'Directional Assistance', 'Language Selection', 'Travel Type Selection', 'Language Selection', 'Airline Selection', 'Airline Selection']",Language Selection,Airline Selection,00:07:00,30
+33,34,03/07/2018,09:37:00,03/07/2018,09:47:00,['Directional Assistance'],Directional Assistance,Directional Assistance,00:10:00,58
+34,35,03/07/2018,08:58:00,03/07/2018,09:07:00,"['Travel Type Selection', 'Directional Assistance', 'Boarding Pass', 'Travel Type Selection', 'Travel Type Selection', 'Airline Selection', 'Baggage Information and Restrictions', 'Information Entry']",Travel Type Selection,Information Entry,00:09:00,26
+35,36,03/07/2018,08:30:00,03/07/2018,08:38:00,"['Language Selection', 'Directional Assistance', 'Information Entry', 'Information Entry', 'Directional Assistance', 'Travel Type Selection']",Language Selection,Travel Type Selection,00:08:00,68
+36,37,03/07/2018,07:54:00,03/07/2018,07:58:00,"['Baggage Information and Restrictions', 'Directional Assistance', 'Information Entry', 'Travel Type Selection', 'Boarding Pass', 'Travel Type Selection']",Baggage Information and Restrictions,Travel Type Selection,00:04:00,65
+37,38,03/07/2018,07:14:00,03/07/2018,07:15:00,"['Travel Type Selection', 'Language Selection', 'Language Selection', 'Information Entry', 'Service Selection', 'Airline Selection', 'Travel Type Selection']",Travel Type Selection,Travel Type Selection,00:01:00,39
+38,39,03/07/2018,06:52:00,03/07/2018,06:55:00,['Baggage Information and Restrictions'],Baggage Information and Restrictions,Baggage Information and Restrictions,00:03:00,51
+39,40,03/07/2018,06:48:00,03/07/2018,06:52:00,"['Directional Assistance', 'Service Selection', 'Airline Selection', 'Airline Selection', 'Travel Type Selection', 'Boarding Pass', 'Baggage Information and Restrictions', 'Airline Selection']",Directional Assistance,Airline Selection,00:04:00,69
+40,41,03/07/2018,06:47:00,03/07/2018,06:57:00,"['Travel Type Selection', 'Directional Assistance', 'Information Entry', 'Travel Type Selection', 'Information Entry', 'Information Entry', 'Service Selection']",Travel Type Selection,Service Selection,00:10:00,8
+41,42,03/07/2018,05:59:00,03/07/2018,06:08:00,"['Boarding Pass', 'Travel Type Selection', 'Boarding Pass']",Boarding Pass,Boarding Pass,00:09:00,27
+42,43,03/07/2018,05:09:00,03/07/2018,05:16:00,"['Directional Assistance', 'Travel Type Selection', 'Language Selection', 'Boarding Pass']",Directional Assistance,Boarding Pass,00:07:00,80
+43,44,03/07/2018,04:50:00,03/07/2018,04:55:00,['Directional Assistance'],Directional Assistance,Directional Assistance,00:05:00,33
+44,45,03/07/2018,03:52:00,03/07/2018,03:54:00,"['Language Selection', 'Language Selection', 'Travel Type Selection', 'Service Selection', 'Directional Assistance', 'Directional Assistance', 'Airline Selection']",Language Selection,Airline Selection,00:02:00,54
+45,46,03/07/2018,03:01:00,03/07/2018,03:04:00,"['Baggage Information and Restrictions', 'Airline Selection', 'Airline Selection', 'Airline Selection', 'Baggage Information and Restrictions', 'Boarding Pass', 'Directional Assistance', 'Airline Selection']",Baggage Information and Restrictions,Airline Selection,00:03:00,51
+46,47,03/07/2018,02:59:00,03/07/2018,03:08:00,['Service Selection'],Service Selection,Service Selection,00:09:00,7
+47,48,03/07/2018,02:49:00,03/07/2018,02:52:00,"['Language Selection', 'Directional Assistance']",Language Selection,Directional Assistance,00:03:00,65
+48,49,03/07/2018,02:10:00,03/07/2018,02:17:00,"['Information Entry', 'Travel Type Selection', 'Service Selection', 'Travel Type Selection', 'Directional Assistance']",Information Entry,Directional Assistance,00:07:00,71
+49,50,03/07/2018,02:01:00,03/07/2018,02:07:00,"['Boarding Pass', 'Travel Type Selection', 'Baggage Information and Restrictions', 'Service Selection', 'Service Selection', 'Information Entry', 'Language Selection']",Boarding Pass,Language Selection,00:06:00,32
+50,51,03/07/2018,01:21:00,03/07/2018,01:30:00,['Airline Selection'],Airline Selection,Airline Selection,00:09:00,62
+51,52,03/07/2018,01:13:00,03/07/2018,01:23:00,"['Airline Selection', 'Service Selection', 'Language Selection', 'Directional Assistance']",Airline Selection,Directional Assistance,00:10:00,75
+52,53,03/07/2018,00:40:00,03/07/2018,00:41:00,"['Information Entry', 'Airline Selection']",Information Entry,Airline Selection,00:01:00,28

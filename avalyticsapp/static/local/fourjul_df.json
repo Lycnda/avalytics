@@ -1,0 +1,14 @@
+fourjul = [ [{"time":0,"y":52},{"time":1,"y":87},{"time":2,"y":11},{"time":3,"y":153},{"time":4,"y":0}],
+  			[{"time":0,"y":0},{"time":1,"y":0},{"time":2,"y":0},{"time":3,"y":0},{"time":4,"y":0}],
+ 			[{"time":0,"y":0},{"time":1,"y":0},{"time":2,"y":0},{"time":3,"y":0},{"time":4,"y":0}]
+]
+
+fourjulduration = [ [{"time":0,"y":0},{"time":1,"y":0},{"time":2,"y":0},{"time":3,"y":0},{"time":4,"y":0}],
+  			[{"time":0,"y":6},{"time":1,"y":17},{"time":2,"y":9},{"time":3,"y":12},{"time":4,"y":3}],
+ 			[{"time":0,"y":0},{"time":1,"y":0},{"time":2,"y":0},{"time":3,"y":0},{"time":4,"y":0}]
+]
+
+fourjulusers = [ [{"time":0,"y":0},{"time":1,"y":0},{"time":2,"y":0},{"time":3,"y":0},{"time":4,"y":0}],
+  			[{"time":0,"y":0},{"time":1,"y":0},{"time":2,"y":0},{"time":3,"y":0},{"time":4,"y":0}],
+ 			[{"time":0,"y":1},{"time":1,"y":2},{"time":2,"y":1},{"time":3,"y":3},{"time":4,"y":1}]
+]

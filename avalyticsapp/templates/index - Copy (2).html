@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- loads all static files required for the webpage -->
+ {% load staticfiles %}
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'lib/startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/css/bootstrap.min.css' %}"/>
+
+    <!-- MetisMenu CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'lib/startbootstrap-sb-admin-2-gh-pages/vendor/metisMenu/metisMenu.min.css' %}"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'lib/startbootstrap-sb-admin-2-gh-pages/dist/css/sb-admin-2.css' %}"/>
+
+    <!-- Morris Charts CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'lib/startbootstrap-sb-admin-2-gh-pages/vendor/morrisjs/morris.css' %}"/>
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" type="text/css" href="{% static 'lib/startbootstrap-sb-admin-2-gh-pages/vendor/font-awesome/css/font-awesome.min.css' %}"/>
+
+
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">AVALYTICS</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+             
+                
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                            </div>
+                            <!-- /input-group -->
+                        </li>
+                        <li>
+                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> All Users Sessions</a>
+                        </li>
+                        <li>
+                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Single User Sessions</a>
+                        </li>
+                        <li>
+                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Single User Session</a>
+                        </li>
+   
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Single User Sessions</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+
+            <div class="row" id="UsersSelect">
+
+               
+                <!-- /.col-lg-12 -->
+            </div>
+
+
+            <!-- /.row -->
+            <div class="row">
+                
+              <div class="col-lg-6">
+
+                    <div class="row">
+
+                            <div class="col-lg-6 col-md-6">
+                                 <div class="panel panel-success">
+                                            <div class="panel-heading">
+                                                <div class="row">
+                                                    <div class="col-xs-3">
+                                                        <i class="fa fa-clock-o fa-5x"></i>
+                                                    </div>
+                                                    <div class="col-xs-9 text-right">
+                                                        <div class="huge" id="start_date_time"></div>
+                                                        <div>Session Start Time</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                            
+                                </div>
+                            </div>
+                    </div>
+
+                    
+                    <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                        <div class="panel panel-warning">
+                                            <div class="panel-heading">
+                                                <div class="row">
+                                                    <div class="col-xs-3">
+                                                        <i class="fa fa-clock-o fa-5x"></i>
+                                                    </div>
+                                                    <div class="col-xs-9 text-right">
+                                                        <div class="huge" id="end_date_time"></div>
+                                                        <div>Session End Time</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                            </div>
+
+
+                    </div>
+
+                    
+                 </div>   
+
+
+                <div class="col-lg-6">
+
+                    <div class="row">
+
+                                <div class="col-lg-6 col-md-6">
+                                        <div class="panel panel-yellow">
+                                            <div class="panel-heading">
+                                                <div class="row">
+                                                    <div class="col-xs-3">
+                                                        <i class="fa fa-clock-o fa-5x"></i>
+                                                    </div>
+                                                    <div class="col-xs-9 text-right">
+                                                        <div class="huge" id="duration"></div>
+                                                        <div>Session Duration</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                </div>
+
+
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="panel panel-danger">
+                                        <div class="panel-heading">
+                                            <div class="row">
+                                                <div class="col-xs-3">
+                                                    <i class="fa fa-mouse-pointer fa-5x"></i>
+                                                </div>
+                                                <div class="col-xs-9 text-right">
+                                                    <div class="huge" id="clicks"></div>
+                                                    <div>Number of Clicks</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                                    <div class="panel panel-danger">
+                                        <div class="panel-heading">
+                                            <div class="row">
+                                                <div class="col-xs-3">
+                                                    <i class="fa fa-newspaper-o fa-5x"></i>
+                                                </div>
+                                                <div class="col-xs-9 text-right">
+                                                    <div class="huge" id="first_page"></div>
+                                                    <div>First Page</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                        </div>
+
+
+                        <div class="col-lg-6 col-md-6">
+                                    <div class="panel panel-green">
+                                        <div class="panel-heading">
+                                            <div class="row">
+                                                <div class="col-xs-3">
+                                                    <i class="fa fa-newspaper-o fa-5x"></i>
+                                                </div>
+                                                <div class="col-xs-9 text-right">
+                                                    <div class="huge" id="last_page"></div>
+                                                    <div>Last Page</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+  
+            
+            </div>
+            <!-- /.row -->
+
+
+            <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-clock-o fa-fw"></i> Click Path
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <ul class="timeline" id="the_clickpath_timeline">                  
+                                
+                            </ul>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+
+
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="{% static 'lib/startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.min.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script type="text/javascript" src="{% static 'lib/startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script type="text/javascript" src="{% static 'lib/startbootstrap-sb-admin-2-gh-pages/vendor/metisMenu/metisMenu.min.js' %}"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script type="text/javascript" src="{% static 'lib/startbootstrap-sb-admin-2-gh-pages/vendor/raphael/raphael.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'lib/startbootstrap-sb-admin-2-gh-pages/vendor/morrisjs/morris.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'lib/startbootstrap-sb-admin-2-gh-pages/data/morris-data.js' %}"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script type="text/javascript" src="{% static 'lib/startbootstrap-sb-admin-2-gh-pages/dist/js/sb-admin-2.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'local/sitavisuals.js' %}"></script>
+
+
+    <script type="text/javascript">
+             users = [["User 1"], ["User 2"], ["User 3"], ["User 4"]];
+             drawTable2(users,"myPieChart");
+
+             var sess_data = {{session_data|safe}};
+             num_users = sess_data.length - 1;
+
+            document.getElementById("UsersSelect").innerHTML = 'Quantity (between 1 and ' +  JSON.stringify(num_users) + '): <input type="number" name="quantity"  id="user" min="1" max=' + JSON.stringify(num_users) + '>' + '<input type="submit" id="sub_b">';
+
+            user_value = 0;
+
+            document.getElementById("sub_b").onclick = function () {
+                                                                               user_value = document.getElementById("user").value;
+                                                                               user_value_num = parseInt(user_value);
+
+                                                                               firstRowPanels(sess_data,user_value_num);
+                                                                        
+                                                                                timelineData(sess_data,user_value_num);
+
+                                                                                
+                                                                            };
+
+
+           
+
+
+    </script>
+
+
+</body>
+
+</html>
