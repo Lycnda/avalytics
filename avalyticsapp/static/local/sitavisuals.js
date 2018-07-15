@@ -85,12 +85,12 @@ function timelineData(data,user)
 function firstRowPanels(sess_data,user_value_num)
 {
 
-	start_date_time_val = "<h4>" + sess_data[user_value_num][1] + " " + sess_data[user_value_num][2] + "</h4>";
-    end_date_time_val = "<h4>" + sess_data[user_value_num][3] + " " + sess_data[user_value_num][4] + "</h4>";
-    duration_val = "<h4>" + sess_data[user_value_num][8] + "</h4>";
-    clicks_val = "<h4>" + sess_data[user_value_num][9] + "</h4>";
-    first_page_val = "<h4> <font color='black'>" + sess_data[user_value_num][6] + "</h4></font>";
-    last_page_val = "<h4> <font color='black'>" + sess_data[user_value_num][7] + "</h4></font>";
+	start_date_time_val = "<b><h4>" + sess_data[user_value_num][1] + " " + sess_data[user_value_num][2] + "</h4></b>";
+    end_date_time_val = "<b><h4>" + sess_data[user_value_num][3] + " " + sess_data[user_value_num][4] + "</h4></b>";
+    duration_val = "<b><h4>" + sess_data[user_value_num][8] + "</h4></b>";
+    clicks_val = "<b><h4>" + sess_data[user_value_num][9] + "</h4></b>";
+    first_page_val = "<b><h4> <font color='black'>" + sess_data[user_value_num][6] + "</h4></font></b>";
+    last_page_val = "<b><h4> <font color='black'>" + sess_data[user_value_num][7] + "</h4></font></b>";
 
     document.getElementById("start_date_time").innerHTML = start_date_time_val;
     document.getElementById("end_date_time").innerHTML = end_date_time_val;
@@ -108,10 +108,10 @@ function firstRowPanelsSessionSummary(sess_data)
     // first_page_val = "<h3>" + sess_data[user_value_num][6] + "</h3>";
     // last_page_val = "<h3>" + sess_data[user_value_num][7] + "</h3>";
 
-    document.getElementById("date_time").innerHTML = "<h4>" + sess_data[2] + "</h4>";
-    document.getElementById("clicks").innerHTML = "<h4>" + sess_data[1] + "<h4>";
-    document.getElementById("duration").innerHTML = "<h4>" + sess_data[3] + " mins" + "<h4>";
-    document.getElementById("num_users").innerHTML = "<h4>" + sess_data[4] + "<h4>";
+    document.getElementById("date_time").innerHTML = "<b><h4>" + sess_data[2] + "</h4></b>";
+    document.getElementById("clicks").innerHTML = "<b><h4>" + sess_data[1] + "<h4></b>";
+    document.getElementById("duration").innerHTML = "<b><h4>" + sess_data[3] + " mins" + "<h4></b>";
+    document.getElementById("num_users").innerHTML = "<b><h4>" + sess_data[4] + "<h4></b>";
 
     
 }
