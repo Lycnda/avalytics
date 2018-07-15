@@ -85,12 +85,12 @@ function timelineData(data,user)
 function firstRowPanels(sess_data,user_value_num)
 {
 
-	start_date_time_val = sess_data[user_value_num][1] + " " + sess_data[user_value_num][2];
-    end_date_time_val = sess_data[user_value_num][3] + " " + sess_data[user_value_num][4];
-    duration_val = sess_data[user_value_num][8];
-    clicks_val = sess_data[user_value_num][9];
-    first_page_val = "<h3>" + sess_data[user_value_num][6] + "</h3>";
-    last_page_val = "<h3>" + sess_data[user_value_num][7] + "</h3>";
+	start_date_time_val = "<h4>" + sess_data[user_value_num][1] + " " + sess_data[user_value_num][2] + "</h4>";
+    end_date_time_val = "<h4>" + sess_data[user_value_num][3] + " " + sess_data[user_value_num][4] + "</h4>";
+    duration_val = "<h4>" + sess_data[user_value_num][8] + "</h4>";
+    clicks_val = "<h4>" + sess_data[user_value_num][9] + "</h4>";
+    first_page_val = "<h4> <font color='black'>" + sess_data[user_value_num][6] + "</h4></font>";
+    last_page_val = "<h4> <font color='black'>" + sess_data[user_value_num][7] + "</h4></font>";
 
     document.getElementById("start_date_time").innerHTML = start_date_time_val;
     document.getElementById("end_date_time").innerHTML = end_date_time_val;
@@ -108,10 +108,10 @@ function firstRowPanelsSessionSummary(sess_data)
     // first_page_val = "<h3>" + sess_data[user_value_num][6] + "</h3>";
     // last_page_val = "<h3>" + sess_data[user_value_num][7] + "</h3>";
 
-    document.getElementById("date_time").innerHTML = sess_data[2];
-    document.getElementById("clicks").innerHTML = sess_data[1];
-    document.getElementById("duration").innerHTML = sess_data[3] + " mins";
-    document.getElementById("num_users").innerHTML = sess_data[4];
+    document.getElementById("date_time").innerHTML = "<h4>" + sess_data[2] + "</h4>";
+    document.getElementById("clicks").innerHTML = "<h4>" + sess_data[1] + "<h4>";
+    document.getElementById("duration").innerHTML = "<h4>" + sess_data[3] + " mins" + "<h4>";
+    document.getElementById("num_users").innerHTML = "<h4>" + sess_data[4] + "<h4>";
 
     
 }
@@ -120,7 +120,7 @@ function plotBarChart(div_id,title_words)
 {
 		// var w = 600;                        //width
 		// var h = 500;                        //height
-		var w = (window.outerWidth/1);
+		var w = (window.outerWidth/1.5);
 		var h = (window.outerHeight/1.5);
 		var padding = {top: 40, right: 40, bottom: 40, left:40};
 		var dataset;
@@ -425,7 +425,7 @@ function plotBarChartUsers(div_id,title_words,date)
 	document.getElementById("mbarsusers").innerHTML = "";
      // var w = 600;                        //width
      // var h = 500;                        //height
-     var w = (window.outerWidth/1);
+     var w = (window.outerWidth/1.5);
      var h = (window.outerHeight/1.5);
      var padding = {top: 40, right: 40, bottom: 40, left:40};
      var dataset;
@@ -710,7 +710,7 @@ function plotBarChartDuration(div_id,title_words,date)
 		document.getElementById("mbarsduration").innerHTML = "";
         // var w = 600;                        //width
         // var h = 500;                        //height
-        var w = (window.outerWidth/1);
+        var w = (window.outerWidth/1.5);
         var h = (window.outerHeight/1.5);
         var padding = {top: 40, right: 40, bottom: 40, left:40};
         var dataset;
